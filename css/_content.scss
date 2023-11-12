@@ -1,0 +1,318 @@
+/* HEADER */
+
+.logo {
+    @include flexible;
+    padding:4vh 5vw;
+
+    &-logo {
+        width:118px;
+    }
+
+    &-claim {
+        display:none;
+    }
+
+    &-button {
+        border: solid 1px $dark;
+        border-radius:50%;
+        padding: 10px 18px;
+        text-transform:uppercase;
+        font-size:$font-xxs;
+        font-weight: 900;
+        font-family: $fonts;
+        cursor:pointer;
+    }
+    &-button:hover {
+        @include hover;
+        transition: $transition;
+    }
+} 
+
+/* MAIN CONTENT */
+
+.opinions {
+    background-image: url("../assets/burger.png");
+    background-repeat: no-repeat;
+    background-size: 730px;
+    background-position: 0 20%;
+    margin-bottom: 100px;
+
+    &-title {
+        text-transform: uppercase;
+        font-size:$font-m;
+        line-height: 0.8em;
+        font-weight: 700;
+        padding: 2vh 30vw 7vh 5vw;
+    }
+    
+    /* SECTION */
+
+    &articles {
+        margin: 3vh;
+        display:grid;
+        gap:15px 15px;
+    }
+
+    /* CARD */
+
+    &-card {
+        background-color:$light;
+        border-radius:20px;
+        padding: 30px 25px;
+        box-shadow: 5px 7px 11px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    &-card--featured {
+        background-color:$red;
+        color: $light;
+        background-image: url("../assets/bg-pattern-quotation.svg");
+        background-repeat: no-repeat;
+        background-size: 110px;
+        background-position: 75% 0px;
+
+        & .user-title {
+            color:$light;
+            opacity:0.7;
+        }
+
+        & .card-text {
+            color:$light;
+            opacity:0.7;
+        }
+    }
+
+    &-card--black {
+        background-color:$dark;
+        color: $light;
+
+        & .user-title {
+            color:$light;
+            opacity:0.7;
+        }
+
+        & .card-text {
+            color:$light;
+            opacity:0.7;
+        }
+    }
+
+    &-header {
+        @include flexible;
+        justify-content: start;
+        margin-bottom:1rem;
+    }
+
+    &-logo{
+        border-radius: 100%;
+        border: 1px solid $light;
+        max-width:30px;
+        margin-right:10px;
+    }
+
+    &-content {
+        @include flexible;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &-name {
+        font-size:$font-xs;
+        font-weight:900;
+    }
+
+    &-title {
+        font-size:$font-xxs;
+        font-weight:500;
+        color:$dark;
+        opacity:0.7;
+    }
+
+    &-title {
+        font-size: $font-s;
+        margin-bottom: 1rem;
+    }
+    
+    &-card-text {
+        font-size: $font-xxs;
+        line-height: $font-xs;
+        color:$dark;
+        opacity:0.7;
+        }
+}
+
+/* FOOTER */
+
+.footer {
+    @include flexible;
+    flex-direction: column;
+    text-transform:uppercase;
+    text-align: center;
+    margin-bottom: 25px;
+    min-height: 50px;
+
+    & a {
+        color:$dark;
+        margin-bottom: 10px;
+        
+        &:hover {
+            @include hover;
+            transition: $transition;
+        }
+    }
+
+    &-featured-links {
+        font-weight: 900;
+        margin-bottom: 30px;
+    }
+
+    &-comercial-links a {
+        opacity: 0.7;
+        font-size: $font-xxs;
+    }
+
+    &-link {
+        display:block;
+    }
+}
+
+@media screen and (min-width:768px){
+    
+    /* HEADER 768+ */
+
+    .header {
+        padding:6vh 3vw;
+    }
+    
+    /* MAIN CONTENT 768+ */
+
+    .content {
+        background-position: 0 30%;
+        margin-bottom: 60px;
+
+        &__title {
+            font-size:$font-xl;
+            padding: 0vh 3vw 4vh 3vw;
+        }
+    }
+}
+
+@media screen and (min-width:1024px){
+    
+    /* MAIN CONTENT 1024+ */
+
+    .opinions {
+        padding-bottom: 40px;
+        background-position: 0 50%;
+        margin-bottom: 0;
+
+        &-title {
+            font-size:$font-xxxl;
+        }
+
+            /* SECTION 1024+ */
+            
+        &-box {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: 
+            "card-1 card-1 card-2"
+            "card-3 card-4 card-4"
+            "card-5 card-5 card-5"
+            ;
+        }
+    }
+
+    /* CARD 1024+ */
+
+    .card-1 {
+        grid-area: card-1;
+    }
+
+    .card-2 {
+        grid-area: card-2;
+    }
+
+    .card-3 {
+        grid-area: card-3;
+    }
+
+    .card-4 {
+        grid-area: card-4;
+    }
+
+    .card-5 {
+        grid-area: card-5;
+    }
+
+/* FOOTER 1024+ */
+
+    .footer { 
+        flex-direction: row;
+        padding: 0 2vw;
+
+        &-featured-links {
+            font-size: $font-xxs;
+            min-width: 350px;
+            @include flexible;
+            margin-bottom: 0;
+        }
+
+        &-comercial-links {
+            min-width: 200px;
+            @include flexible;
+
+            & a {
+                opacity: 0.5;
+                font-size: $font-xxxs;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1480px){
+    
+    .header {
+        padding:4vh 2vw;
+
+        &-title {
+            @include flexible;
+            text-transform: uppercase;
+            font-size:$font-xxs;
+            font-weight: 800;
+            text-align: right;
+            gap: 20px;
+        }
+
+        &-claim {
+            display:inline-block;
+            width: 220px;
+            font-size:$font-xxxs;
+        }
+    }
+
+    .content {
+        background-position: 0px 80%;
+        background-size: 700px;
+
+        &__title {
+            font-size:$font-xxl;
+            padding: 1vh 25vw 6vh 3vw;
+            max-width: 60%;
+        }
+        
+        /* SECTION 1480+ */
+
+        &-box {
+            margin:auto;
+            max-width:70%;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+            "card-1 card-1 card-2 card-5"
+            "card-3 card-4 card-4 card-5"
+            ;
+        }
+    
+    }
+    
+}

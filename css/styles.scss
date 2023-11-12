@@ -1,0 +1,20 @@
+@import 'variables';
+@import 'mixins';
+@import 'content';
+
+body {
+    background-color: $medium;
+    margin:0;
+    font-family:$fonts;
+}
+
+a {
+    text-decoration: none;
+    cursor:pointer;
+}
+
+h1, h2, h3, h4, h5, h6,  div, span, p {
+    margin: 0;
+	padding: 0;
+	border: 0;
+}
